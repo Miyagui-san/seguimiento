@@ -10,30 +10,29 @@
                         </v-btn>
                 </v-snackbar>
 
+                <v-tooltip bottom>
+                    <template v-slot:activator="{ on, attrs }">
+                    <v-btn small depressed color="grey lighten-4" @click="sortBy('title')" v-bind="attrs" v-on="on">
+                        <v-icon left small>mdi-folder</v-icon>
+                        <span class="caption text-lowercase">tarea</span>
+                    </v-btn>
+                    </template>
+                    <span>Ordenar por titulo de tarea</span>
+                </v-tooltip>
 
-
-            <v-tooltip bottom>
-                <template v-slot:activator="{ on, attrs }">
-                <v-btn small depressed color="grey lighten-4" @click="sortBy('title')" v-bind="attrs" v-on="on">
-                    <v-icon left small>mdi-folder</v-icon>
-                    <span class="caption text-lowercase">By project name</span>
-                </v-btn>
-                </template>
-                <span>Sort projects by project name</span>
-            </v-tooltip>
-
-            <v-tooltip bottom>
-                <template v-slot:activator="{ on, attrs }">
-                <v-btn small depressed color="grey lighten-4" @click="sortBy('person')" v-bind="attrs" v-on="on">
-                    <v-icon left small>mdi-account</v-icon>
-                    <span class="caption text-lowercase">By person</span>
-                </v-btn>
-                </template>
-                <span>Sort projects by person</span>
-            </v-tooltip>
-            
-            <v-spacer></v-spacer>
-            <popup @projectAdded="snackbar = true" />
+                <v-tooltip bottom>
+                    <template v-slot:activator="{ on, attrs }">
+                    <v-btn class="mx-1" small depressed color="grey lighten-4" @click="sortBy('person')" v-bind="attrs" v-on="on">
+                        <v-icon left small>mdi-account</v-icon>
+                        <span class="caption text-lowercase">responsable</span>
+                    </v-btn>
+                    </template>
+                    <span>Ordenar por responsable</span>
+                </v-tooltip>
+                
+                <v-spacer></v-spacer>
+                
+                <popup @projectAdded="snackbar = true" />
 
             </v-row>
         </v-container>

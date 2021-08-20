@@ -21,11 +21,6 @@ const routes = [
     component: () => import('../views/Discord.vue')
   },
   {
-    path: '/inbox',
-    name: 'Inbox',
-    component: () => import('../views/Inbox.vue')
-  },
-  {
     path: '/tareas',
     name: 'Tareas',
     component: () => import('../views/Tareas.vue')

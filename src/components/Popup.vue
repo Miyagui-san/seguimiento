@@ -3,22 +3,22 @@
         <v-dialog v-model="dialog" max-width="600px">
                 <template v-slot:activator="{ on }">
                     <v-btn depressed class="grey lighten-4 black--text" v-on="on">
-                        <span>add new project</span>
+                        <span>nueva tarea</span>
                     </v-btn>
                 </template>
                     <v-card> 
                         <v-card-title>
-                            <h1>add a new project</h1>
+                            <h2>NUEVA TAREA</h2>
                         </v-card-title>
                         <v-card-text>
                             <v-form class="px-3" ref="form">
                                 <v-text-field label="Dependencia" v-model="dependencia" prepend-icon="mdi-office-building" :rules="inputRules"></v-text-field>
-                                <v-text-field label="Title" v-model="title" prepend-icon="mdi-folder" :rules="inputRules"></v-text-field>
-                                <v-text-field label="Information" v-model="content" prepend-icon="mdi-pencil" :rules="inputRules"></v-text-field>
+                                <v-text-field label="Titulo" v-model="title" prepend-icon="mdi-folder" :rules="inputRules"></v-text-field>
+                                <v-text-field label="Comentario" v-model="content" prepend-icon="mdi-pencil" :rules="inputRules"></v-text-field>
 
                                 <v-menu offset-y>
                                     <template v-slot:activator="{ on }">
-                                        <v-text-field v-model="person" :rules="inputRules" v-on="on" label="Person" prepend-icon="mdi-account"></v-text-field>
+                                        <v-text-field v-model="person" :rules="inputRules" v-on="on" label="Responsable" prepend-icon="mdi-account"></v-text-field>
                                     </template>
                                     <v-list flat>
                                         <v-list-item v-for="person in team" :key="person.mail">
@@ -31,12 +31,12 @@
 
                                 <v-menu max-width="290">
                                     <template v-slot:activator="{ on }">
-                                        <v-text-field :rules="inputRules" :value="formattedDate" v-on="on" label="Due date" prepend-icon="mdi-calendar"></v-text-field>
+                                        <v-text-field :rules="inputRules" :value="formattedDate" v-on="on" label="Fecha límite" prepend-icon="mdi-calendar"></v-text-field>
                                     </template>
                                     <v-date-picker v-model="due"></v-date-picker>
                                 </v-menu>
 
-                                <v-btn flat class="success mx-0 mt-3" @click="submit" :loading="loading">Add project</v-btn>
+                                <v-btn flat class="success mx-0 mt-3" @click="submit" :loading="loading">agregar</v-btn>
                             </v-form>
                         </v-card-text>
 
