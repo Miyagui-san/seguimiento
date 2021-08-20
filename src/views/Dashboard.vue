@@ -59,7 +59,9 @@
 
           <v-col>
             <div class="text-right">
-              <v-chip :class="`v-chip--active white--text caption my-2 ${project.status}`">{{ project.status }}</v-chip>
+              <v-chip :class="`v-chip--active white--text caption my-2 ${project.status}`">
+                {{ project.status }}
+                </v-chip>
             </div>
           </v-col>
 
@@ -85,7 +87,7 @@ export default {
   data() {
     return{
       projects: [],
-         snackbar: false
+      snackbar: false
     }
   },
   methods: {

@@ -17,9 +17,9 @@
 
                 <v-menu offset-y>
                     <template v-slot:activator="{on}">
-                        <v-btn flat v-on="on" color="grey">
+                        <v-btn depressed v-on="on">
                             <v-icon left>mdi-expand-all</v-icon>
-                            <v-span>Menu</v-span>
+                            <span>Menu</span>
                         </v-btn>
                     </template>
                     <v-list>
@@ -29,20 +29,20 @@
                     </v-list>
                 </v-menu>
 
-                <v-btn flat color="error">
+                <v-btn depressed>
                     <span>sign out</span>
                     <v-icon right>mdi-exit-to-app</v-icon>
                 </v-btn>
         </v-app-bar>
 
-        <v-navigation-drawer app v-model="drawer" class="indigo">
+        <v-navigation-drawer app v-model="drawer" dark>
             <v-list>
                 <v-list-item v-for="link in links" :key="link.text" router :to="link.route">
                     <v-list-item-action>
-                        <v-icon class="white--text">{{ link.icon }}</v-icon>
+                        <v-icon>{{ link.icon }}</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
-                        <v-list-item-title class="white--text">{{ link.text }}</v-list-item-title>
+                        <v-list-item-title>{{ link.text }}</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
             </v-list>
@@ -62,6 +62,7 @@ export default {
             {icon: 'mdi-view-week', text:'Team', route:'/Team'},
             {icon: 'mdi-view-stream', text:'Discord', route:'/discord'},
             {icon: 'mdi-mailbox', text:'Inbox', route:'/inbox'},
+            {icon: 'mdi-view-dashboard', text:'Tareas', route:'/tareas'},
          ],
         }
     }
